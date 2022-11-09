@@ -292,4 +292,6 @@ button {
   .post-actions p {
     font-size: 0.75rem;
   }
+  .inner-container img.profile{
+    width: 60%;
 }
