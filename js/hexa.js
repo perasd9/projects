@@ -128,16 +128,16 @@ async function getAllPosts(){
 
             let comment_html = "";
 
-            if(comments.length > 0 && user.username.includes("sandra")){
+            if(comments.length > 0){
                 comments.forEach(comment => {
+                    if(comment.user_id === 1){
                     comment_html += `<div class = "single-comment"> <span style = "color: grey ; border:2px solid yellow; padding: 10px; 
-                    margin-right: 15px ;"> <img src = "img/sandrakurva.jpeg" style = "height : 25px ; width : 25px">: ${user.username} :</span>${comment.content} </div>`;
-                });
-            }
-            else{
-                comments.forEach(comment => {
-                    comment_html += `<div class = "single-comment"> <span style = "color: grey ; border:2px solid yellow; padding: 10px; 
-                    margin-right: 15px ;"> <img src = "img/profile.jpg" style = "height : 25px ; width : 25px">: ${user.username} :</span>${comment.content} </div>`;
+                    margin-right: 15px ;"> <img src = "img/sandrakurva.jpeg" style = "height : 25px ; width : 25px">:</span>${comment.content} </div>`;
+                    }
+                    else{
+                        comment_html += `<div class = "single-comment"> <span style = "color: grey ; border:2px solid yellow; padding: 10px; 
+                    margin-right: 15px ;"> <img src = "img/profile.jpg" style = "height : 25px ; width : 25px">:</span>${comment.content} </div>`;
+                    }
                 });
             }
 
