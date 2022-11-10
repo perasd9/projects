@@ -207,12 +207,12 @@ hr {
 }
 
 .all-posts-wrapper .single-post form input {
-  width: 85%;
+  width: 80%;
   padding: 0 10px;
 }
 
 .all-posts-wrapper .single-post form button {
-  width: 15%;
+  width: 20%;
   background-color: grey;
 }
 .all-posts-wrapper .single-post .post-comments {
@@ -256,6 +256,9 @@ button {
 }
 
 @media (max-width: 415px) {
+  .all-posts-wrapper .single-post form button{
+    font-size: 0.8rem;
+  }
   .inner-container.right-side form {
     height: 60px;
     font-size: 0.8rem;
