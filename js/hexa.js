@@ -130,11 +130,13 @@ async function getAllPosts(){
 
             if(comments.length > 0){
                 comments.forEach(comment => {
+                    comment.user_id = parseInt(comment.user_id);
+                
                     if(comment.user_id === 1){
                     comment_html += `<div class = "single-comment"> <span style = "color: grey ; border:2px solid yellow; padding: 10px; 
                     margin-right: 15px ;"> <img src = "img/sandrakurva.jpeg" style = "height : 25px ; width : 25px">:</span>${comment.content} </div>`;
                     }
-                    else{
+                    else if(comment.user_id === 2){
                         comment_html += `<div class = "single-comment"> <span style = "color: grey ; border:2px solid yellow; padding: 10px; 
                     margin-right: 15px ;"> <img src = "img/profile.jpg" style = "height : 25px ; width : 25px">:</span>${comment.content} </div>`;
                     }
