@@ -37,7 +37,25 @@ class Post{
     async getAllPosts(){
         let response = await fetch(this.api_url + "/posts");
         let data = await response.json();
-        return data;
+        
+        let dates = [];
+
+        data.forEach(dat =>{
+            dates.push(dat.created);
+        })
+        
+        dates.sort((a, b) => a - b);
+
+        let sortedData = [];
+
+        data.forEach(dat =>{
+            dates.forEach(date =>{
+                if(dat.created === date)
+                    sortedData.push(dat);
+            })
+        })
+
+        return sortedData;
     }
 
     async delete(post_id){
